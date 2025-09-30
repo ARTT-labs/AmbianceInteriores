@@ -13,24 +13,21 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "test1",
-    text:
-      "Working with your design team was an absolute pleasure. The attention to detail and creativity exceeded my expectations. Thank you for making my home beautiful!",
+    text: "Working with your design team was an absolute pleasure. The attention to detail and creativity exceeded my expectations. Thank you for making my home beautiful!",
     name: "Sophie Carter",
     location: "New York, USA",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
     id: "test2",
-    text:
-      "Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism and a keen eye for design. Highly recommend!",
+    text: "Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism and a keen eye for design. Highly recommend!",
     name: "James Bennett",
     location: "Toronto, Canada",
     avatar: "https://randomuser.me/api/portraits/men/55.jpg",
   },
   {
     id: "test3",
-    text:
-      "Nossa sala nunca foi tão aconchegante — detalhamento impecável e entrega no prazo.",
+    text: "Nossa sala nunca foi tão aconchegante — detalhamento impecável e entrega no prazo.",
     name: "Mariana",
     location: "São Paulo, BR",
     avatar: "https://randomuser.me/api/portraits/women/30.jpg",
@@ -47,8 +44,11 @@ export function Feedbacks() {
   const visible = testimonials.slice(index, index + 2);
 
   return (
-    <section id="testimonials" className="px-6 md:px-12 lg:px-24 py-16 bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+    <section
+      id="testimonials"
+      className="px-6 md:px-12 lg:px-24 py-16 bg-white"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto">
         {/* Left image + controls */}
         <div className="order-2 lg:order-1 lg:col-span-1">
           <div className="relative">
@@ -95,7 +95,6 @@ export function Feedbacks() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.06 }}
             >
-              
               <p className="text-sm leading-relaxed">{t.text}</p>
 
               <div className="flex items-center gap-3 mt-6">

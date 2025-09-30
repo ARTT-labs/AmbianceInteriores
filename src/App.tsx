@@ -1,12 +1,12 @@
-import { Header } from "./components/Header"; // se já existir
-import { Hero } from "./components/Hero"; // se já existir
-import { About } from "./components/About"; // se já existir
-import { Services } from "./components/Services"; // se já existir
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Services } from "./components/Services";
 import { Portfolio } from "./components/Portfolio";
 import { Team } from "./components/Team";
 import { Feedbacks } from "./components/Feedbacks";
 import { Contact } from "./components/Contact";
-//import { Footer } from "./components/Footer"; // se já existir
+//import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
