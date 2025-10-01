@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal } from "antd"; // Importe o componente Modal
-import image from "../assets/aboutUS.png"; // Imagem da seção "Sobre Nós"
+import image from "../assets/aboutUs.png"; // Imagem da seção "Sobre Nós"
 import modalImage from "../assets/modalAbout.png"; // Nova imagem para o modal (crie ou use uma existente)
 
 export function About() {
