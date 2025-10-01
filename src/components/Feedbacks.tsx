@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { motion } from "framer-motion";
+import "./Feedbacks.css"; // Certifique-se de criar este arquivo CSS
 
 type Testimonial = {
   id: string;
@@ -13,103 +12,146 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: "test1",
-    text: "Working with your design team was an absolute pleasure. The attention to detail and creativity exceeded my expectations. Thank you for making my home beautiful!",
-    name: "Sophie Carter",
-    location: "New York, USA",
+    text: "A Ambiance Interiores transformou completamente meu apartamento! A qualidade da entrega e a atenção aos detalhes superaram todas as minhas expectativas. O resultado ficou incrível, e me sinto em casa.",
+    name: "Carolina Silva",
+    location: "Recife, PE",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
     id: "test2",
-    text: "Exceptional service! From the initial consultation to the final reveal, your team demonstrated professionalism and a keen eye for design. Highly recommend!",
-    name: "James Bennett",
-    location: "Toronto, Canada",
+    text: "Os profissionais da Ambiance são extremamente capacitados e atenciosos. Desde o primeiro contato até a finalização, tudo foi conduzido com grande profissionalismo. Recomendo muito!",
+    name: "Lucas Oliveira",
+    location: "Fortaleza, CE",
     avatar: "https://randomuser.me/api/portraits/men/55.jpg",
   },
   {
     id: "test3",
-    text: "Nossa sala nunca foi tão aconchegante — detalhamento impecável e entrega no prazo.",
-    name: "Mariana",
-    location: "São Paulo, BR",
+    text: "Fiquei impressionada com a facilidade de comunicação. Minhas ideias foram compreendidas e incorporadas ao projeto de forma fluida. O projeto ficou completo e inovador, exatamente o que eu sonhava!",
+    name: "Isabela Santos",
+    location: "Recife, PE",
     avatar: "https://randomuser.me/api/portraits/women/30.jpg",
+  },
+  {
+    id: "test4",
+    text: "A entrega foi impecável e dentro do prazo, algo raro hoje em dia. O projeto da Ambiance Interiores trouxe uma nova vida para minha casa, com soluções que eu jamais imaginaria. Super recomendo!",
+    name: "Mateus Costa",
+    location: "Gravatá, PE",
+    avatar: "https://randomuser.me/api/portraits/men/58.jpg",
+  },
+  {
+    id: "test5",
+    text: "Com a Ambiance, tive a certeza de que meu investimento valeu a pena. A equipe é altamente profissional, o projeto é completo e inovador, e a qualidade dos materiais é excelente.",
+    name: "Ana Clara Lima",
+    location: "Rio de Janeiro, RJ",
+    avatar: "https://randomuser.me/api/portraits/women/42.jpg",
+  },
+  {
+    id: "test6",
+    text: "Desde o planejamento até a execução, a Ambiance Interiores demonstrou um talento incrível. O design é inovador e a funcionalidade do espaço melhorou demais. Profissionais realmente capacitados!",
+    name: "Rafael Pereira",
+    location: "Recife, PE",
+    avatar: "https://randomuser.me/api/portraits/men/70.jpg",
   },
 ];
 
+const allTestimonials = [...testimonials, ...testimonials];
+
 export function Feedbacks() {
-  const [index, setIndex] = useState(0);
-
-  const prev = () => setIndex((i) => Math.max(0, i - 1));
-  const next = () => setIndex((i) => Math.min(i + 1, testimonials.length - 2)); // show 2 at a time
-
-  // ensure slice bounds
-  const visible = testimonials.slice(index, index + 2);
+  const cardColors = ["bg-neutral-100", "bg-neutral-300", "bg-neutral-200"];
 
   return (
     <section
       id="testimonials"
-      className="px-6 md:px-12 lg:px-24 py-16 bg-white"
+      className="px-6 md:px-12 lg:px-24 py-16 bg-white overflow-hidden"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start max-w-7xl mx-auto">
-        {/* Left image + controls */}
-        <div className="order-2 lg:order-1 lg:col-span-1">
-          <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1586023492121-1ec7a43f4d60?w=1200&q=80"
-              alt="project"
-              className="rounded-lg object-cover w-full h-96"
-            />
-            <div className="absolute left-3 bottom-3 flex gap-2">
-              <button
-                onClick={() => prev()}
-                className="p-2 bg-white rounded shadow hover:bg-gray-100"
-                aria-label="previous testimonial"
-              >
-                <FiChevronLeft />
-              </button>
-              <button
-                onClick={() => next()}
-                className="p-2 bg-white rounded shadow hover:bg-gray-100"
-                aria-label="next testimonial"
-              >
-                <FiChevronRight />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Heading */}
+      <div className="max-w-7xl mx-auto h-full">
         <div className="order-1 lg:order-2 lg:col-span-2 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="w-12 h-0.5 bg-black"></span>
-            <h2 className="text-3xl md:text-4xl font-bold">Feedbacks</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">
+              O que os clientes falam sobre nós?
+            </h2>
           </div>
         </div>
 
-        {/* testimonial cards */}
-        <div className="order-3 lg:order-3 lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {visible.map((t, idx) => (
-            <motion.blockquote
-              key={t.id}
-              className="bg-neutral-900 text-white p-6 rounded shadow-lg relative overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.06 }}
-            >
-              <p className="text-sm leading-relaxed">{t.text}</p>
+        <div className="flex-col gap-8 max-w-full">
+          <div className="scrolling-container my-8">
+            <div className="scrolling-track">
+              {allTestimonials.map((t, idx) => (
+                <motion.div
+                  key={`${t.id}-${idx}`}
+                  className="testimonial-card flex-none w-[320px] p-4"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05, duration: 0.5 }}
+                >
+                  <div
+                    className={`${
+                      cardColors[idx % cardColors.length]
+                    } p-6 rounded-lg shadow-md h-full flex flex-col justify-between`}
+                  >
+                    <p className="text-neutral-800 text-sm leading-relaxed mb-4">
+                      {t.text}
+                    </p>
+                    <div className="flex items-center mt-auto">
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="w-10 h-10 rounded-full object-cover mr-3"
+                      />
+                      <div>
+                        <div className="font-semibold text-neutral-900">
+                          {t.name}
+                        </div>
+                        <div className="text-xs text-neutral-600">
+                          {t.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-              <div className="flex items-center gap-3 mt-6">
-                <img
-                  src={t.avatar}
-                  alt={t.name}
-                  className="w-10 h-10 rounded-full object-cover border-2 border-white"
-                />
-                <div>
-                  <div className="font-semibold">{t.name}</div>
-                  <div className="text-xs text-white/70">{t.location}</div>
-                </div>
-              </div>
-            </motion.blockquote>
-          ))}
+          <div className="scrolling-container my-8">
+            <div className="scrolling-track-reversed">
+              {allTestimonials.map((t, idx) => (
+                <motion.div
+                  key={`${t.id}-${idx}`}
+                  className="testimonial-card flex-none w-[320px] p-4"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05, duration: 0.5 }}
+                >
+                  <div
+                    className={`${
+                      cardColors[idx % cardColors.length]
+                    } p-6 rounded-lg shadow-md h-full flex flex-col justify-between`}
+                  >
+                    <p className="text-neutral-800 text-sm leading-relaxed mb-4">
+                      {t.text}
+                    </p>
+                    <div className="flex items-center mt-auto">
+                      <img
+                        src={t.avatar}
+                        alt={t.name}
+                        className="w-10 h-10 rounded-full object-cover mr-3"
+                      />
+                      <div>
+                        <div className="font-semibold text-neutral-900">
+                          {t.name}
+                        </div>
+                        <div className="text-xs text-neutral-600">
+                          {t.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

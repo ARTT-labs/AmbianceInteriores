@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
-import { FiInstagram, FiFacebook, FiLinkedin } from "react-icons/fi";
+import { FiInstagram, FiLinkedin } from "react-icons/fi";
+import p1 from "../assets/p1.jpg";
+import p2 from "../assets/p2.jpg";
+import p3 from "../assets/p3.jpg";
 
 type Member = {
   id: string;
@@ -12,9 +15,9 @@ type Member = {
 const team: Member[] = [
   {
     id: "t1",
-    name: "Esther Howards",
-    role: "Founder & CEO",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Esther Duarte",
+    role: "CEO & Arquiteta",
+    avatar: p3,
     socials: [
       { type: "instagram", href: "#" },
       { type: "linkedin", href: "#" },
@@ -22,29 +25,29 @@ const team: Member[] = [
   },
   {
     id: "t2",
-    name: "Cameron Williamson",
-    role: "Marketing Head",
-    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    name: "Gabriel Silva",
+    role: "Designer de Interiores",
+    avatar: p1,
     socials: [
-      { type: "facebook", href: "#" },
+      { type: "instagram", href: "#" },
       { type: "linkedin", href: "#" },
     ],
   },
   {
     id: "t3",
-    name: "Liam Cooper",
-    role: "Marketing Head",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Laura Mendes",
+    role: "Arquiteta e Designer de Interiores",
+    avatar: p2,
     socials: [
       { type: "instagram", href: "#" },
-      { type: "facebook", href: "#" },
+      { type: "linkedin", href: "#" },
     ],
   },
 ];
 
 export function Team() {
   return (
-    <section id="team" className="px-6 md:px-12 lg:px-24 py-16 bg-gray-50">
+    <section id="team" className="px-6 md:px-12 lg:px-24 py-16 bg-neutral-100">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center gap-4">
@@ -76,11 +79,10 @@ export function Team() {
                     <a
                       key={i}
                       href={s.href}
-                      className="p-2 bg-white/90 rounded-full shadow text-sm text-gray-700 hover:bg-black hover:text-white transition"
+                      className="p-2 bg-white/90 rounded-full shadow text-sm text-neutral-700 hover:bg-black hover:text-white transition cursor-pointer"
                       aria-label={s.type}
                     >
                       {s.type === "instagram" && <FiInstagram />}
-                      {s.type === "facebook" && <FiFacebook />}
                       {s.type === "linkedin" && <FiLinkedin />}
                     </a>
                   ))}
@@ -89,7 +91,7 @@ export function Team() {
 
               <div className="p-4">
                 <h3 className="font-semibold">{m.name}</h3>
-                <p className="text-xs text-gray-500 mt-1">{m.role}</p>
+                <p className="text-xs text-neutral-500 mt-1">{m.role}</p>
               </div>
             </motion.div>
           ))}

@@ -1,0 +1,41 @@
+.scrolling-track {
+  /* Faz com que todos os cards fiquem em uma única linha */
+  display: flex;
+  gap: 0.1rem;
+  /* Aplica a animação */
+  animation: scroll 60s linear infinite;
+}
+
+.scrolling-track-reversed {
+  /* Faz com que todos os cards fiquem em uma única linha */
+  display: flex;
+  gap: 0.1rem;
+  /* Aplica a animação reversa */
+  animation: scroll-reversed 60s linear infinite;
+}
+
+.testimonial-card {
+  /* Garante que o tamanho do card seja fixo */
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Animação para mover da direita para a esquerda */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Animação para mover da esquerda para a direita */
+@keyframes scroll-reversed {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

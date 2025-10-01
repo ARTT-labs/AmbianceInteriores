@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import image from "../assets/imgHero.svg";
+import { Link } from "react-scroll";
 
 export function Hero() {
   return (
     <section
       id="home"
-      className="max-h-200 h-screen flex flex-col justify-center bg-gray-50"
+      className="max-h-200 h-screen flex flex-col justify-center bg-neutral-100"
     >
       <div className="px-8 gap-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center h-full">
         <div className="flex-1 flex flex-col justify-between place-items-start h-3/4">
@@ -21,9 +22,16 @@ export function Hero() {
             Consultoria e execução em design de interiores residenciais e
             comerciais.
           </p>
-          <button className="mt-6 bg-neutral-900 text-white px-6 py-3 rounded hover:bg-neutral-700 cursor-pointer transition">
-            Solicite um orçamento gratuito
-          </button>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="hover:underline cursor-pointer"
+          >
+            <button className="mt-6 bg-neutral-900 text-white px-6 py-3 rounded hover:bg-neutral-700 cursor-pointer transition">
+              Solicite um orçamento gratuito
+            </button>
+          </Link>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <h3 className=" text-4xl font-bold text-gray-900">100+</h3>

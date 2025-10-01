@@ -1,31 +1,31 @@
 import { useState } from "react";
-import { Modal, Button } from "antd";
+import { Modal } from "antd";
 
-import icon from "../assets/InteriordesignIcon.svg";
-import icon2 from "../assets/LightingdesignIcon.svg";
-import icon3 from "../assets/OutdoordesignIcon.svg";
+import interiorsIcon from "../assets/InteriordesignIcon.svg";
+import lightIcon from "../assets/LightingdesignIcon.svg";
+import outdoorIcon from "../assets/OutdoordesignIcon.svg";
 
 const services = [
   {
     title: "Consultoria de Interiores",
-    desc: "Diagnóstico e planejamento de espaços.",
-    img: icon,
+    desc: "Diagnóstico e planejamento de espaços personalizados.",
+    img: interiorsIcon,
     details:
-      "Na consultoria de interiores, fazemos uma análise completa do seu ambiente para propor soluções personalizadas que atendam seu estilo e funcionalidade.",
+      "Nossa consultoria de interiores é o ponto de partida para transformar o seu espaço. Através de um diagnóstico completo, identificamos as melhores soluções para otimizar a funcionalidade e o fluxo do ambiente, sempre alinhando com suas necessidades e estilo pessoal.",
   },
   {
-    title: "Projetos 3D e Moodboards",
-    desc: "Visualização realista antes da execução.",
-    img: icon2,
+    title: "Projeto Luminotécnico",
+    desc: "A arte de iluminar com funcionalidade e beleza.",
+    img: lightIcon,
     details:
-      "Com projetos 3D e moodboards, você consegue visualizar de forma realista como ficará o espaço, facilitando tomadas de decisão e ajustes antes da execução.",
+      "Um projeto luminotécnico bem executado tem o poder de realçar a arquitetura, criar cenários e influenciar o bem-estar. Analisamos cada detalhe para planejar uma iluminação que combine eficiência energética com o toque de aconchego e sofisticação ideal para o seu ambiente.",
   },
   {
-    title: "Reformas e Decoração Completa",
-    desc: "Do planejamento à entrega.",
-    img: icon3,
+    title: "Paisagismo",
+    desc: "Integração perfeita entre o interior e o exterior.",
+    img: outdoorIcon,
     details:
-      "Oferecemos acompanhamento completo desde a fase inicial até a finalização, cuidando de cada detalhe da reforma ou decoração do seu ambiente.",
+      "Levamos a nossa paixão pelo design para o seu jardim e áreas externas. Através do paisagismo, criamos ambientes que convidam ao relaxamento e à conexão com a natureza, harmonizando a estética com a funcionalidade e a manutenção do espaço.",
   },
 ];
 
@@ -44,7 +44,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="px-10 py-20 bg-gray-50 ">
+    <section id="services" className="px-10 py-20 bg-neutral-100 ">
       <div className="px-8 max-w-7xl mx-auto ">
         <div className="flex items-center gap-4 pb-10">
           <span className="w-12 h-0.5 bg-black"></span>
@@ -65,16 +65,7 @@ export function Services() {
         </div>
       </div>
 
-      <Modal
-        open={open}
-        onCancel={handleClose}
-        footer={[
-          <Button key="back" onClick={handleClose}>
-            Voltar
-          </Button>,
-        ]}
-        centered
-      >
+      <Modal open={open} footer={null} onCancel={handleClose} centered>
         {selected !== null && (
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">{services[selected].title}</h2>
