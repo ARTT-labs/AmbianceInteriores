@@ -1,21 +1,35 @@
+
 .scrolling-track {
-  /* Faz com que todos os cards fiquem em uma única linha */
   display: flex;
   gap: 0.1rem;
   /* Aplica a animação */
-  animation: scroll 60s linear infinite;
+  animation: scroll 30s linear infinite;
+  /* Torna o cursor interativo */
+  cursor: grab;
 }
 
 .scrolling-track-reversed {
-  /* Faz com que todos os cards fiquem em uma única linha */
   display: flex;
   gap: 0.1rem;
   /* Aplica a animação reversa */
-  animation: scroll-reversed 60s linear infinite;
+  animation: scroll-reversed 30s linear infinite;
+  /* Torna o cursor interativo */
+  cursor: grab;
+}
+
+/* Pausa a animação quando o mouse passa por cima */
+.scrolling-track:hover,
+.scrolling-track-reversed:hover {
+  animation-play-state: paused;
+}
+
+/* Garante que o cursor mude para 'grabbing' durante a interação */
+.scrolling-track:active,
+.scrolling-track-reversed:active {
+  cursor: grabbing;
 }
 
 .testimonial-card {
-  /* Garante que o tamanho do card seja fixo */
   flex-shrink: 0;
   flex-grow: 0;
 }

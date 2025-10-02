@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./Feedbacks.css"; // Certifique-se de criar este arquivo CSS
+import "./Feedbacks.css"; // Certifique-se de ter este arquivo CSS
 
 type Testimonial = {
   id: string;
@@ -54,10 +54,15 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-const allTestimonials = [...testimonials, ...testimonials];
-
 export function Feedbacks() {
-  const cardColors = ["bg-neutral-100", "bg-neutral-300", "bg-neutral-200"];
+  const cardColors = [
+    "bg-neutral-100",
+    "bg-neutral-300",
+    "bg-neutral-200",
+    "bg-neutral-400",
+    "bg-neutral-500",
+    "bg-neutral-600",
+  ];
 
   return (
     <section
@@ -77,7 +82,7 @@ export function Feedbacks() {
         <div className="flex-col gap-8 max-w-full">
           <div className="scrolling-container my-8">
             <div className="scrolling-track">
-              {allTestimonials.map((t, idx) => (
+              {testimonials.map((t, idx) => (
                 <motion.div
                   key={`${t.id}-${idx}`}
                   className="testimonial-card flex-none w-[320px] p-4"
@@ -116,7 +121,7 @@ export function Feedbacks() {
 
           <div className="scrolling-container my-8">
             <div className="scrolling-track-reversed">
-              {allTestimonials.map((t, idx) => (
+              {testimonials.map((t, idx) => (
                 <motion.div
                   key={`${t.id}-${idx}`}
                   className="testimonial-card flex-none w-[320px] p-4"
