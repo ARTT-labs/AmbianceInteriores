@@ -8,11 +8,10 @@ export function Hero() {
       id="home"
       className="min-h-screen flex flex-col justify-center bg-neutral-100 py-16"
     >
-      <div className="px-8 gap-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center h-full">
-        {/* Bloco de Texto e Botões */}
+      <div className="pt-1.5 px-8 gap-12 max-w-7xl mx-auto flex flex-col md:flex-row items-center h-full">
         <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           <motion.h1
-            className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+            className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight "
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -49,7 +48,6 @@ export function Hero() {
             </button>
           </Link>
         </div>
-        {/* Bloco da Imagem - Oculto em mobile, visível em md */}
         <div className="flex-1 justify-center w-full md:w-auto mt-12 md:mt-0 hidden md:flex">
           <img
             src={image}
