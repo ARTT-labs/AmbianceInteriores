@@ -176,21 +176,21 @@ export function Portfolio() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 items-start max-h-[70vh] overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-8 items-start max-h-[70vh] overflow-y-auto">
               <div className="flex flex-col gap-4">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full rounded object-cover h-full max-h-[500px]"
-                />
-              </div>
-              <div className="flex flex-col gap-4 max-h-[70vh] overflow-y-auto">
                 <p className="text-neutral-800 leading-relaxed text-xl font-bold">
                   Detalhes do projeto:
                 </p>
                 <p className="text-neutral-800 leading-relaxed">
                   {selectedProject.description}
                 </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full rounded object-cover h-full"
+                />
               </div>
             </div>
           </div>

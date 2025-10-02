@@ -48,7 +48,7 @@ export function Contact() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-2">
               <div className="p-2 bg-white/90 rounded-full shadow text-sm text-neutral-700 hover:bg-black hover:text-white transition cursor-pointer">
-                <FiPhone className="text-xl text-black" />
+                <FiPhone className="text-xl text-neutral-300" />
               </div>
 
               <a
@@ -60,7 +60,7 @@ export function Contact() {
             </div>
             <div className="flex items-center gap-2">
               <div className="p-2 bg-white/90 rounded-full shadow text-sm text-neutral-700 hover:bg-black hover:text-white transition cursor-pointer">
-                <FiMail className="text-xl text-black" />
+                <FiMail className="text-xl text-neutral-300" />
               </div>
               <a
                 href="mailto:contato@ambianceinteriores.com"
@@ -70,8 +70,8 @@ export function Contact() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <div className="p-2 bg-white/90 rounded-full shadow text-sm text-neutral-700 hover:bg-black hover:text-white transition cursor-pointer">
-                <FiInstagram className="text-xl text-black" />
+              <div className="p-2 bg-white/90 rounded-full shadow text-sm text-neutral-700 hover:bg-black  transition cursor-pointer">
+                <FiInstagram className="text-xl text-neutral-300" />
               </div>
               <a
                 href="https://www.instagram.com/ambianceinteriores"
@@ -112,7 +112,7 @@ export function Contact() {
             required
             className="p-3 border rounded-md h-32 focus:outline-none focus:ring-2 focus:ring-black transition"
           />
-          <button className="bg-black text-white py-3 rounded-md hover:bg-neutral-800 transition">
+          <button className="bg-black text-white py-3 rounded-md hover:bg-neutral-800 hover:text-neutral-50 transition cursor-pointer">
             Fale com um designer agora
           </button>
           {status && <p className="text-center mt-4">{status}</p>}

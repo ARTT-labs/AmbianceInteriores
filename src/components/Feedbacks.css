@@ -2,31 +2,20 @@
 .scrolling-track {
   display: flex;
   gap: 0.1rem;
-  /* Aplica a animação */
   animation: scroll 30s linear infinite;
-  /* Torna o cursor interativo */
   cursor: grab;
 }
 
 .scrolling-track-reversed {
   display: flex;
   gap: 0.1rem;
-  /* Aplica a animação reversa */
   animation: scroll-reversed 30s linear infinite;
-  /* Torna o cursor interativo */
   cursor: grab;
 }
 
-/* Pausa a animação quando o mouse passa por cima */
 .scrolling-track:hover,
 .scrolling-track-reversed:hover {
   animation-play-state: paused;
-}
-
-/* Garante que o cursor mude para 'grabbing' durante a interação */
-.scrolling-track:active,
-.scrolling-track-reversed:active {
-  cursor: grabbing;
 }
 
 .testimonial-card {
@@ -34,7 +23,6 @@
   flex-grow: 0;
 }
 
-/* Animação para mover da direita para a esquerda */
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -44,7 +32,6 @@
   }
 }
 
-/* Animação para mover da esquerda para a direita */
 @keyframes scroll-reversed {
   from {
     transform: translateX(-50%);
